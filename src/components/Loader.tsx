@@ -213,10 +213,23 @@ const Loader = () => {
       stagger: 0.2,
     });
     // Animate text fade-in (now text)
-    t1.to(".text-fade-animation", {
-      animation: "text-anime 2s ease-in-out infinite",
-      opacity: 1,
-    });
+    t1.to(
+      ".text-fade-animation",
+      {
+        animation: "text-anime 2s ease-in-out infinite",
+        opacity: 1,
+        duration: 0.4,
+      },
+      "+=0.2"
+    );
+    t1.to(
+      ".fade-in-animation",
+      {
+        opacity: 1,
+        duration: 0.4,
+      },
+      "<"
+    );
     // Animate in the counter, then start count
     t1.from(countRef.current, {
       opacity: 0,
@@ -227,7 +240,7 @@ const Loader = () => {
     // Animate loader exit after delay
     t1.to(".loader", {
       y: -1600,
-      duration: 1.5,
+      duration: 2,
       delay: 3.5,
       ease: "power2.inOut",
       onComplete: () => {
@@ -263,7 +276,7 @@ const Loader = () => {
   return (
     <div className="loader fixed inset-0 z-50 bg-[#000000] py-[25vh] px-[10vw]">
       {stringArr.map((str, index) => (
-        <div key={index} className="overflow-hidden w-fit h-fit flex">
+        <div key={index} className="overflow-hidden w-full h-fit flex">
           {index === 0 && (
             <div className="flex items-start justify-start pr-5">
               <p
@@ -292,10 +305,16 @@ const Loader = () => {
           >
             {str}
           </h1>
+          {index === stringArr.length - 1 && (
+            <div className="pl-10 text-fade-animation text-[5vw] leading-[5.5vw] my-auto  uppercase font-medium opacity-0">
+              Now
+            </div>
+          )}
         </div>
       ))}
-      <div className="text-fade-animation text-[6vw] leading-[6.5vw] uppercase font-medium opacity-0">
-        Now
+      <div className="fade-in-animation opacity-0 ">
+        <p className="font-medium text-sm">Please wait</p>
+        <p className="font-medium text-sm">a few second</p>
       </div>
     </div>
   );
