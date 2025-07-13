@@ -301,7 +301,7 @@ const Loader = () => {
             ref={(el) => {
               if (el) linesRef.current[index] = el;
             }}
-            className="text-[6vw] leading-[6.5vw] uppercase font-medium"
+            className="heading-text"
           >
             {str}
           </h1>
@@ -312,7 +312,7 @@ const Loader = () => {
           )}
         </div>
       ))}
-      <div className="fade-in-animation opacity-0 ">
+      <div className="fade-in-animation opacity-0 mt-10 ml-70">
         <p className="font-medium text-sm">Please wait</p>
         <p className="font-medium text-sm">a few second</p>
       </div>
