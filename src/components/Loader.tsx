@@ -274,7 +274,7 @@ const Loader = () => {
   if (!showLoader) return null;
 
   return (
-    <div className="loader fixed inset-0 z-50 bg-[#000000] py-[25vh] px-[10vw]">
+    <div className="loader fixed inset-0 z-[9999] bg-[#000000] py-[25vh] px-[10vw]">
       {stringArr.map((str, index) => (
         <div key={index} className="overflow-hidden w-full h-fit flex">
           {index === 0 && (

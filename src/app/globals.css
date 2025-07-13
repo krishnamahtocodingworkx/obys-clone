@@ -95,7 +95,6 @@ body {
 }
 .hero-inner-container {
   padding: 5vw 0;
-  border: 1px solid var(--foreground);
   display: grid;
   grid-template-columns: 10% 15% 75%;
 }
@@ -104,4 +103,29 @@ body {
   line-height: 7vw;
   text-transform: uppercase;
   font-weight: 500;
+}
+.stoke-font {
+  -webkit-text-stroke: 0px;
+  -webkit-text-fill-color: var(--foreground);
+  transition: all 0.3s ease;
+  text-decoration: underline;
+}
+
+.stoke-font:hover {
+  -webkit-text-stroke: 1px var(--foreground);
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+#cursor {
+  position: fixed;
+  width: 2vw;
+  height: 2vw;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px solid var(--foreground);
+  z-index: 99;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: difference;
+  pointer-events: none;
 }

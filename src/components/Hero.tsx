@@ -25,10 +25,10 @@ const Hero = () => {
             <p className="scroll-text ">Scroll</p>
           </div>
         </div>
-        <div className="border">
+        <div className="">
           <p className="title text-center">01</p>
         </div>
-        <div className="border">
+        <div className="">
           {headingArr.map((str, index) => (
             <div key={index} className="overflow-hidden w-full h-fit flex ">
               {index === 2 ? (
@@ -42,7 +42,7 @@ const Hero = () => {
                     <h1
                       key={wordIndex}
                       className={`heading-text ${
-                        wordIndex !== 1 && "underline"
+                        wordIndex !== 1 && "stoke-font"
                       }`}
                     >
                       {word}
